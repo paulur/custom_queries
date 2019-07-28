@@ -2,9 +2,9 @@ This query enables Checkmarx to scan for common keys and tokens often found in G
 
 ## Import the Query directly into Checkmarx
 
-The file gitleaks_query.xml can directly be imported into Checkmarx.  Please follow these [instructions](https://checkmarx.atlassian.net/wiki/spaces/KC/pages/91029540/Query+Viewer+v8.4.1+to+v8.9.0) on how to import queries.
+The file [gitleaks_query.xml](gitleaks_query.xml) can directly be imported into Checkmarx.  Please follow these [instructions](https://checkmarx.atlassian.net/wiki/spaces/KC/pages/91029540/Query+Viewer+v8.4.1+to+v8.9.0) on how to import queries.
 
-Note: gitleaks_query.xml will only import git leaks for the language Python.  If you wish to add another language, edit the xml file and make two changes:
+Note: [gitleaks_query.xml](gitleaks_query.xml) will only import git leaks for the language Python.  If you wish to add another language, edit the xml file and make two changes:
 
 1. Rename the value for LanguageName
 2. Rename the value for Language
@@ -63,7 +63,7 @@ Note: Restart all IIS servers.
 
 1. In CxAudit, make a group under Corp for each language for which you want to support.  This was tested in Python, but may apply to other languages.  Example: Corp/GitLeaks
 
-2. Under the created group, make a query with a name that corresponds to the name of each .cxq file included with this repo (CxGitLeaks.cxq and CxTruffleHog.cxq).  Paste the contents of each file into the corresponding query you created.
+2. Under the created group, make a query with a name that corresponds to the name of each .cxq file included with this repo ([CxGitLeaks.cxq](CxAudit/Corp/Python/GitLeaks/CxGitLeaks.cxq) and [CxTruffleHog.cxq](CxAudit/Corp/Python/GitLeaks/CxTruffleHog.cxq)).  Paste the contents of each file into the corresponding query you created.
 
 3. Set the properties on each query as follows:
    
