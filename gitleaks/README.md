@@ -1,6 +1,6 @@
 This query enables Checkmarx to scan for common keys and tokens often found in GIT repositories.  It is based off regex's created by [GitLeaks](https://github.com/zricethezav/gitleaks) and [TruffleHog](https://github.com/dxa4481/truffleHog).
 
-# Import the Query directly into Checkmarx
+## Import the Query directly into Checkmarx
 
 The file gitleaks_query.xml can directly be imported into Checkmarx.  Please follow these [instructions](https://checkmarx.atlassian.net/wiki/spaces/KC/pages/91029540/Query+Viewer+v8.4.1+to+v8.9.0) on how to import queries.
 
@@ -35,11 +35,11 @@ The chart for the languages is:
 | 262144 | Typescript |
 | 524288 | Kotlin     |
 
-# Scan configuration files
+## Scan configuration files
 
 If you have configuration files that Checkmarx does not scan for (i.e. YAML or JSON), you need to add the extension to the Checkmarx Database.
 
-Execute the SQL script in file "add_config_files" in the CxDB.  This script will add a stored procedure to the CxDB.  Then you must execute the stored procedure.  Examples"
+Execute the SQL script in file [add_config_files.sql](add_config_files.sql) in the CxDB.  This script will add a stored procedure to the CxDB.  Then you must execute the stored procedure.  Examples:
 
 ```javascript
 1. exec AddFileExtToLanguage 'Java', 'properties', 'JAVA_XML_EXTENSIONS'
@@ -59,7 +59,7 @@ These commands will add ".properties", ".yml", ".yaml", and ".json" files to the
 Note: Restart all IIS servers.
 
 
-# Make Changes to the Query using CxAudit
+## Make Changes to the Query using CxAudit
 
 1. In CxAudit, make a group under Corp for each language for which you want to support.  This was tested in Python, but may apply to other languages.  Example: Corp/GitLeaks
 
@@ -67,22 +67,21 @@ Note: Restart all IIS servers.
 
 3. Set the properties on each query as follows:
    
-> CxTruffleHog:
-> Set severity to the level desired
-> Choose categories as needed (likely fits in Sensitive Data Exposure categories)
-> CWE ID 615
-> Executable should be checked
+CxTruffleHog:
+* Set severity to the level desired
+* Choose categories as needed (likely fits in Sensitive Data Exposure categories)
+* CWE ID 615
+* Executable should be checked
 
-> CxGitLeaks:
-> Set severity to the level desired
-> Choose categories as needed (likely fits in Sensitive Data Exposure categories)
-> CWE ID 615
-> Executable should be checked
+CxGitLeaks:
+* Set severity to the level desired
+* Choose categories as needed (likely fits in Sensitive Data Exposure categories)
+* CWE ID 615
+* Executable should be checked
 
 4. Save the queries and exit CxAudit.
 
-
-# Modify scanning presets on projects
+## Modify scanning presets on projects
 
 The final is step is enabling the query in the preset you are scanning with.  For more directions, please refer to the [Preset Manager Documentation](https://checkmarx.atlassian.net/wiki/spaces/KC/pages/49250315/Preset+Manager).  It is necessary to check the boxes under Corp/GitLeaks that contains the queries CxGitLeaks and CxTruffleHog.
 
