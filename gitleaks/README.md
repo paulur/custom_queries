@@ -9,7 +9,16 @@ Note: [gitleaks_query.xml](gitleaks_query.xml) will only import git leaks for th
 1. Rename the value for LanguageName
 2. Rename the value for Language
 
-The chart for the languages is:
+To retrieve your language to id mapping, please execute the following SQL statement:
+
+```javascript
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [Id]
+      ,[Name]
+  FROM [CxDB].[Config].[CxProgramLanguages]
+```
+
+An example of the programming language chart will be (but might differ for each customer):
 
 | Id     | Name       |
 | ------ | ---------- |
