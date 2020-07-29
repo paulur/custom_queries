@@ -8,3 +8,5 @@ exec AddFileExtToLanguage 'JavaScript', 'yml', 'JS_XML_EXTENSIONS'
 exec AddFileExtToLanguage 'Python', 'properties', 'PYTHON_CORE_EXTENSIONS'
 exec AddFileExtToLanguage 'Python', 'yaml', 'PYTHON_CORE_EXTENSIONS'
 exec AddFileExtToLanguage 'Python', 'yml', 'PYTHON_CORE_EXTENSIONS'
+
+DELETE FROM CxDB.Config.CxFileExtension WHERE Symbol='PYTHON_PROPERTIES';

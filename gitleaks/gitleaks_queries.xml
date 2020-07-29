@@ -1,4 +1,4 @@
-﻿<Queries><Query><QueryId>100003</QueryId><Name>CxTruffleHog</Name><Cwe>0</Cwe><PackageId>100000</PackageId><IsExecutable>true</IsExecutable><Severity>3</Severity><LanguageName>Common</LanguageName><IsEncrypted>false</IsEncrypted><IsReadOnly>false</IsReadOnly><Language>1073741824</Language><Description /><PackageTypeName>Corp</PackageTypeName><PackageType>1</PackageType><GroupName>Leaks</GroupName><Source>// Regexes from https://github.com/dxa4481/truffleHogRegexes/blob/master/truffleHogRegexes/regexes.json
+﻿<Queries><Query><QueryId>100003</QueryId><Name>CxTruffleHog</Name><Cwe>0</Cwe><PackageId>100000</PackageId><IsExecutable>true</IsExecutable><Severity>3</Severity><LanguageName>Python</LanguageName><IsEncrypted>false</IsEncrypted><IsReadOnly>false</IsReadOnly><Language>16384</Language><Description /><PackageTypeName>Corp</PackageTypeName><PackageType>1</PackageType><GroupName>Leaks</GroupName><Source>// Regexes from https://github.com/dxa4481/truffleHogRegexes/blob/master/truffleHogRegexes/regexes.json
 
 Dictionary&lt;string, string&gt; regexes = new Dictionary&lt;string, string&gt;(); 
 regexes.Add("Slack Token", "(xox[p|b|o|a]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})");
@@ -50,7 +50,7 @@ bool searchInComments = true;
 foreach(String key in regexes.Keys)
 {
 	result += All.FindByRegexExt(regexes[key], fileMaskList, searchInComments, CxList.CxRegexOptions.None, RegexOptions.IgnoreCase);
-}</Source><EngineMetadata p3:nil="true" xmlns:p3="http://www.w3.org/2001/XMLSchema-instance" /><Version>6</Version></Query><Query><QueryId>100002</QueryId><Name>CxGitLeaks</Name><Cwe>0</Cwe><PackageId>100000</PackageId><IsExecutable>true</IsExecutable><Severity>3</Severity><LanguageName>Common</LanguageName><IsEncrypted>false</IsEncrypted><IsReadOnly>false</IsReadOnly><Language>1073741824</Language><Description /><PackageTypeName>Corp</PackageTypeName><PackageType>1</PackageType><GroupName>Leaks</GroupName><Source>// Regexes from https://github.com/dxa4481/truffleHogRegexes/blob/master/truffleHogRegexes/regexes.json
+}</Source><EngineMetadata p3:nil="true" xmlns:p3="http://www.w3.org/2001/XMLSchema-instance" /><Version>6</Version></Query><Query><QueryId>100002</QueryId><Name>CxGitLeaks</Name><Cwe>0</Cwe><PackageId>100000</PackageId><IsExecutable>true</IsExecutable><Severity>3</Severity><LanguageName>Python</LanguageName><IsEncrypted>false</IsEncrypted><IsReadOnly>false</IsReadOnly><Language>16384</Language><Description /><PackageTypeName>Corp</PackageTypeName><PackageType>1</PackageType><GroupName>Leaks</GroupName><Source>// Regexes from https://github.com/dxa4481/truffleHogRegexes/blob/master/truffleHogRegexes/regexes.json
 
 Dictionary&lt;string, string&gt; regexes = new Dictionary&lt;string, string&gt;(); 
 regexes.Add("AWS Client ID", "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}");
